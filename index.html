@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>odin-rock-paper-scissors</title>
+    </head>
+
+<body>
+    <script>
+        function getComputerChoice() {
+            let computerVariable = Math.random();
+
+            switch (true) {
+                case computerVariable <= 0.33 :
+                    return "rock";
+                    break;
+                case computerVariable <= 0.66 : 
+                    return "scissors";
+                    break;
+                case computerVariable < 1 :
+                    return "paper";
+                    break;
+            }
+        }
+
+        function getHumanChoice() {
+            let humanChoice = prompt( "Rock, paper or scissors?", "");
+
+            if (humanChoice == "rock") {
+                return "rock";
+            } else if (humanChoice == "paper") {
+                return "paper";
+            } else if (humanChoice == "scissors") {
+                return "scissors";
+            } else {
+                return '"rock", "paper" and "scissors" are the only valid input!';
+            }
+        }
+
+        let humanScore = 0;
+        let computerScore = 0;
+
+        
+    </script>
+</body>
+</html>
