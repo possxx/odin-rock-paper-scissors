@@ -24,23 +24,43 @@
         }
 
         function getHumanChoice() {
-            let humanChoice = prompt( "Rock, paper or scissors?", "");
+            let humanSelection = prompt( "Rock, paper or scissors?", "");
 
-            if (humanChoice == "rock") {
-                return "rock";
-            } else if (humanChoice == "paper") {
-                return "paper";
-            } else if (humanChoice == "scissors") {
-                return "scissors";
-            } else {
-                return '"rock", "paper" and "scissors" are the only valid input!';
-            }
+            return humanSelection.toLowerCase();
         }
+            let humanScore = 0;
+            let computerScore = 0;
 
-        let humanScore = 0;
-        let computerScore = 0;
+        function playRound(humanChoice, computerChoice) {
+            if (humanChoice == "rock" && computerChoice == "scissors") {
+                humanScore++;
+                return "You win! Rock beats Scissors";
+            } else if (humanChoice == "paper" && computerChoice == "rock") {
+                humanScore++;
+                return "You win! Paper beats Rock";
+            } else if (humanChoice == "scissors" && computerChoice == "paper") {
+                humanScore++;
+                return "You win! Scissors beats Paper";
+            } else if (humanChoice == "rock" && computerChoice == "paper") {
+                computerScore++;
+                return "You lose! Paper beats Rock";
+            } else if (humanChoice == "paper" && computerChoice == "scissors") {
+                computerScore++;
+                return "You lose! Scissors beats Paper";
+            } else if (humanChoice == "scissors" && computerChoice == "rock") {
+                computerScore++;
+                return "You lose! Rock beats Scissors";
+            } else if (humanChoice != "scissors" || humanChoice != "paper" || humanChoice != "rock") {
+                return '"Rock", "Paper" and "Scissors" are the only valid inputs!';
+            } else {
+                return "It's a tie";
+            }
+        } 
 
-        
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        console.log( playRound(humanSelection, computerSelection) );
     </script>
 </body>
 </html>
