@@ -1,3 +1,3 @@
 # odin-rock-paper-scissors
 
-First js project to play rock, paper, scissors in the console.
+First pure js project to play rock, paper, scissors with a simple GUI.
